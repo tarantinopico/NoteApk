@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Cortex</string>
+    <string name="nav_notes">Poznámky</string>
+    <string name="nav_links">Odkazy</string>
+    <string name="nav_calendar">Kalendář</string>
+    <string name="nav_settings">Nastavení</string>
+</resources>

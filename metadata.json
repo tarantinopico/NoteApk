@@ -1,0 +1,6 @@
+{
+  "name": "Cortex",
+  "description": "Lokální osobní druhý mozek s poznámkami, záložkami a kalendářem.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
