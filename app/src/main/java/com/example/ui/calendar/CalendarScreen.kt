@@ -121,7 +121,7 @@ fun CalendarScreen(
                             firstDayOfWeek = uiState.firstDayOfWeek,
                             onDateSelected = { viewModel.onEvent(CalendarEvent.OnDateSelected(it)) }
                         )
-                        Divider()
+                        HorizontalDivider()
                         // Daily Agenda
                         val dailyItems = uiState.items.filter { 
                             val itemDate = java.time.Instant.ofEpochMilli(it.startAt).atZone(ZoneId.systemDefault()).toLocalDate()

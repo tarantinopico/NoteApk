@@ -39,7 +39,7 @@ fun CalendarItemEditor(
         val initTime = if (item != null) {
             java.time.Instant.ofEpochMilli(item.startAt).atZone(ZoneId.systemDefault()).toLocalTime()
         } else defaultTime
-        mutableStateOf(String.format("%02d:%02d", initTime.hour, initTime.minute)) 
+        mutableStateOf(String.format(java.util.Locale.US, "%02d:%02d", initTime.hour, initTime.minute)) 
     }
 
     Dialog(
@@ -130,7 +130,7 @@ fun CalendarItemEditor(
                         readOnly = true,
                         label = { Text("Propojená poznámka") },
                         trailingIcon = { ExposedDropdownMenuDefaults.TrailingIcon(expanded = noteDropdownExpanded) },
-                        modifier = Modifier.fillMaxWidth().menuAnchor()
+                        modifier = Modifier.fillMaxWidth().menuAnchor(androidx.compose.material3.MenuAnchorType.PrimaryNotEditable)
                     )
                     ExposedDropdownMenu(
                         expanded = noteDropdownExpanded,

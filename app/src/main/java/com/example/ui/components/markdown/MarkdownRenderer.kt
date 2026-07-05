@@ -234,7 +234,7 @@ private fun MarkdownText(
                     val label = matchText.substring(1, labelEnd)
                     val url = matchText.substring(labelEnd + 2, matchText.length - 1)
                     
-                    pushStringAnnotation(tag = "URL", annotation = url)
+                    pushLink(androidx.compose.ui.text.LinkAnnotation.Url(url))
                     withStyle(SpanStyle(color = MaterialTheme.colorScheme.primary, textDecoration = TextDecoration.Underline)) {
                         append(label)
                     }
@@ -247,20 +247,9 @@ private fun MarkdownText(
         append(text.substring(currentIndex))
     }
 
-    ClickableText(
+    Text(
         text = annotatedString,
         style = style.copy(color = if (style.color != Color.Unspecified) style.color else MaterialTheme.colorScheme.onBackground),
-        modifier = modifier,
-        onClick = { offset ->
-            annotatedString.getStringAnnotations(tag = "URL", start = offset, end = offset)
-                .firstOrNull()?.let { annotation ->
-                    try {
-                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(annotation.item))
-                        context.startActivity(intent)
-                    } catch (e: Exception) {
-                        // Handle invalid URL
-                    }
-                }
-        }
+        modifier = modifier
     )
 }

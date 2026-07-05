@@ -321,7 +321,7 @@ fun SettingsDropdown(title: String, options: List<String>, selectedOption: Strin
             ) {
                 Text(
                     text = selectedOption,
-                    modifier = Modifier.menuAnchor(),
+                    modifier = Modifier.menuAnchor(androidx.compose.material3.MenuAnchorType.PrimaryNotEditable),
                     color = MaterialTheme.colorScheme.primary
                 )
                 ExposedDropdownMenu(

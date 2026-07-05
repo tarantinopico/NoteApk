@@ -22,7 +22,7 @@ object DatabaseModule {
             context,
             CortexDatabase::class.java,
             "cortex_database"
-        ).fallbackToDestructiveMigration().build()
+        ).fallbackToDestructiveMigration(true).build()
     }
 
     @Provides

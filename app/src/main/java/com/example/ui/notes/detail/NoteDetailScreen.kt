@@ -288,7 +288,7 @@ fun NoteDetailScreen(
 
                     if (uiState.linkedCalendarItems.isNotEmpty()) {
                         Spacer(modifier = Modifier.height(spacing.large))
-                        Divider()
+                        HorizontalDivider()
                         Spacer(modifier = Modifier.height(spacing.small))
                         Text("Navázané události a úkoly", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.primary)
                         Spacer(modifier = Modifier.height(spacing.small))
@@ -342,7 +342,7 @@ fun EditorToolbar(
             IconButton(onClick = { onInsert("*text*", 1) }) { Icon(Icons.Default.FormatItalic, "Kurzíva") }
             IconButton(onClick = { onInsert("\n# ", 3) }) { Icon(Icons.Default.Title, "Nadpis") }
             IconButton(onClick = { onInsert("\n- [ ] ", 7) }) { Icon(Icons.Default.Checklist, "Checklist") }
-            IconButton(onClick = { onInsert("\n- ", 3) }) { Icon(Icons.Default.FormatListBulleted, "Seznam") }
+            IconButton(onClick = { onInsert("\n- ", 3) }) { Icon(Icons.Default.List, "Seznam") }
             IconButton(onClick = { onInsert("\n> ", 3) }) { Icon(Icons.Default.FormatQuote, "Citace") }
             IconButton(onClick = { onInsert("\n```\ncode\n```\n", 4) }) { Icon(Icons.Default.Code, "Kód") }
             IconButton(onClick = { onInsert("[odkaz](url)", 1) }) { Icon(Icons.Default.Link, "Odkaz") }
