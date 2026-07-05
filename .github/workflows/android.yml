@@ -32,6 +32,8 @@ jobs:
     - name: Create empty .env file
       run: touch .env
 
+    - name: Create empty google-services.json
+      run: mkdir -p app/src/debug && echo "{}" > app/src/debug/google-services.json
 
     - name: Build with Gradle
       run: ./gradlew assembleDebug testDebugUnitTest --no-daemon -Djava.awt.headless=true
